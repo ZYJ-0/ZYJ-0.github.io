@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外招店长鉴定表</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #f5f6f2;
+    color: #2b3328;
+    padding: 28px 20px 40px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2D4A2C;
+    margin-bottom: 6px;
+  }
+  .page-sub {
+    font-size: 13px;
+    color: #7a8574;
+    margin-bottom: 24px;
+  }
+  .group {
+    background: #fff;
+    border: 1px solid #dde5d8;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .group-head {
+    background: #eef3ea;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2D4A2C;
+    border-bottom: 1px solid #dde5d8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .group-head .count {
+    background: #5B8C5A;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-weight: 400;
+  }
+  .list { padding: 6px 0; }
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #eef2ec;
+    text-decoration: none;
+    color: #2b3328;
+    transition: background .12s ease;
+  }
+  .item:last-child { border-bottom: none; }
+  .item:hover { background: #f4f7f1; }
+  .item .pdf-icon {
+    width: 36px; height: 42px;
+    background: #c0392b;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  .item .pdf-icon::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    border-top: 7px solid #fff;
+    border-left: 7px solid transparent;
+    border-radius: 0 3px 0 0;
+  }
+  .item .name {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .item .open {
+    font-size: 12px;
+    color: #5B8C5A;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .tip {
+    font-size: 12px;
+    color: #7a8574;
+    background: #eef3ea;
+    border-radius: 6px;
+    padding: 10px 14px;
+    line-height: 1.6;
+  }
+
+  .ver { margin-bottom: 22px; }
+  .ver:last-child { margin-bottom: 0; }
+  .ver-head { font-size: 15px; font-weight: 700; color: #2D4A2C; margin-bottom: 8px; }
+  .ver-core { font-size: 12px; color: #5b6657; background: #f3f7f0; border-left: 3px solid #5B8C5A;
+    border-radius: 4px; padding: 9px 12px; line-height: 1.7; margin-bottom: 12px; white-space: pre-wrap; }
+  .tbl-wrap { overflow-x: auto; }
+  table.tbl { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 13px; }
+  table.tbl th, table.tbl td { border: 1px solid #dde5d8; padding: 8px 10px; vertical-align: top; line-height: 1.6; }
+  table.tbl thead th { background: #2D4A2C; color: #fff; font-weight: 700; text-align: center; white-space: nowrap; }
+  table.tbl td.c-block { background: #eef3ea; font-weight: 700; color: #2D4A2C; text-align: center; width: 92px;
+    vertical-align: middle; white-space: pre-line; }
+  table.tbl td.c-content { width: 150px; color: #2b3328; font-weight: 600; }
+  table.tbl td.c-detail { color: #444; }
+  table.tbl td.c-score { width: 110px; color: #8a5a2b; text-align: center; white-space: pre-line; }
+  table.tbl td.c-get { width: 70px; text-align: center; }
+  table.tbl tbody tr:hover { background: #f7faf4; }
+  a.dl { display: inline-block; margin-bottom: 14px; padding: 8px 14px; background: #2D4A2C; color: #fff;
+    border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; }
+  a.dl:hover { background: #3c643b; }
+
+  .header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+  .header-row .page-sub { margin-bottom: 0; }
+  .print-btn { display: inline-flex; align-items: center; gap: 6px; background: #2D4A2C; color: #fff;
+    border: none; border-radius: 6px; padding: 9px 16px; font-size: 13px; font-weight: 700;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0; font-family: inherit; }
+  .print-btn:hover { background: #3c643b; }
+  @media print {
+    @page { size: A4; margin: 12mm; }
+    body { background: #fff; padding: 0; font-size: 12px; }
+    .print-btn, .tip { display: none !important; }
+    .wrap { max-width: none; }
+    .group { break-inside: auto; box-shadow: none; }
+    .group-head { break-after: avoid; page-break-after: avoid; }
+    .item { break-inside: avoid; page-break-inside: avoid; }
+    table.tbl { min-width: 0; width: 100%; font-size: 10px; }
+    table.tbl th, table.tbl td { padding: 4px 6px; }
+    table.tbl thead { display: table-header-group; }
+    table.tbl tr { break-inside: avoid; page-break-inside: avoid; }
+    .ver { break-inside: auto; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header-row">
+    <div>
+      <div class="page-title">外招店长鉴定表</div>
+      <div class="page-sub">通用鉴定表 / 青苗职级检定 / 枝干职级鉴定 —— 原版文件，点击即可查看或下载</div>
+    </div>
+    <button class="print-btn" onclick="window.print()">打印 / 导出PDF</button>
+  </div>
+
+  <div class="group">
+    <div class="group-head">通用鉴定表 <span class="count">4 份</span></div>
+    <div class="list">
+      <a class="item" href="外招鉴定表/ABC4.0柔性评估表-20260402版本.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">ABC4.0柔性评估表（20260402版本）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/茶颜常规门店工作站检测表0514.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">茶颜常规门店工作站检测表0514</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/食安线上稽核表-2607.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">食安线上稽核表（2607）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/食安线下稽核表-2607.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">食安线下稽核表（2607）</div>
+        <div class="open">打开 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head">青苗职级检定表 <span class="count">5 份</span></div>
+    <div class="list">
+      <a class="item" href="外招鉴定表/青苗职级检定表-260603/青苗-基础值班-评估调整版.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">青苗-基础值班（评估调整版）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/青苗职级检定表-260603/青苗-带训检定-评估调整版.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">青苗-带训检定（评估调整版）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/青苗职级检定表-260603/青苗-盘点实操-评估调整.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">青苗-盘点实操（评估调整）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/青苗职级检定表-260603/青苗-订货-评估调整.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">青苗-订货（评估调整）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/青苗职级检定表-260603/青苗-食安快检表.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">青苗-食安快检表</div>
+        <div class="open">打开 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head">枝干1职级鉴定表 <span class="count">3 份</span></div>
+    <div class="list">
+      <a class="item" href="外招鉴定表/枝干1职级鉴定表-260601/枝干1-进阶值班-大店长用.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">枝干1-进阶值班（大店长用）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/枝干1职级鉴定表-260601/枝干1预估预排检定-大店长用.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">枝干1预估预排检定（大店长用）</div>
+        <div class="open">打开 →</div>
+      </a>
+      <a class="item" href="外招鉴定表/枝干1职级鉴定表-260601/枝干1-食安自查-大店长用.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div class="name">枝干1-食安自查（大店长用）</div>
+        <div class="open">打开 →</div>
+      </a>
+    </div>
+  </div>
+
+  
+  <div class="group">
+    <div class="group-head">枝干2职级鉴定表（ABC4.0评估人检定表） <span class="count">1 版本</span></div>
+    <div class="list" style="padding:14px 18px;">
+      <a class="dl" href="外招鉴定表/枝干2-ABC4.0评估人检定表-总.xlsx" target="_blank">下载原版 Excel（可填写 ▶）</a>
+      
+        <div class="ver">
+          <div class="ver-head">2026年3月22日版本</div>
+          <div class="ver-core">分数：满分100分，合格分数85分<br>检定表核心：评估人的角色<br>1、伙伴就是家里用心的主人，评估人是通情达理去做客的客人（有过服务行业从业体感）。不是啥事都无所谓的客人，也不是斤斤计较，啥事都计较的客人！<br>2、评估人正确代入角色，以顾客身份体验门店服务，从员工身份体验门店氛围和伙伴努力程度，以辅导人的身份沟通评估结果；不是去找茬的。<br>3、评估人评估的是在看到或者听到的真实体感，是服务细节。我们ABC要求的是暗打，任何被小伙伴发现的稽核都视为无效稽核。</div>
+          <div class="tbl-wrap"><table class="tbl"><thead><tr><th>板块</th><th>内容</th><th>详情</th><th>分数</th><th>得分</th></tr></thead><tbody><tr><td class="c-block" rowspan="14">能理解<br>（20分）</td><td class="c-content">ABC4.0的调整方向</td><td class="c-detail">1、机制升级核心方向：方向大致正确，服务保持活力-服务回归第一性原理<br>2、以顾客身份体验门店服务，从员工身份体验门店氛围和伙伴努力程度，以辅导人的身份沟通评估结果；不是去找茬的。</td><td class="c-score">共15题，随机抽10题<br>注意：答对一题得2分，答错0分</td><td class="c-get"></td></tr><tr><td class="c-content">方向大致正确，服务保持活力-服务回归第一性原理的主要聚焦在哪3个点</td><td class="c-detail">聚焦门店一线：通过管理给门店减负，让一线伙伴轻装上阵，有精力做服务；<br>聚焦评估人：让评估人理解我们想要的服务，从而清晰如何打 ABC；<br>聚焦工具：ABC4.0柔性标准评估表 有效推动实现我们想要的好服务。</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">评估人角色升级-<br>从检查者到什么？</td><td class="c-detail">隐形体验官</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">ABC解析表的核心</td><td class="c-detail">标准藏于氛围之下</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">ABC调整的关键词</td><td class="c-detail">真实和柔性</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">柔性体感的来源是</td><td class="c-detail">态度永远大于能力【禁止行为：有能力说-没说，有能力做-没做；没达到目的，为了说而说，为了做而做的行为】。 <br>不僵化的执行标准，而把服务做好了，就算得上卓越了。现场有神明！</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">直接为“零分”场景是</td><td class="c-detail">①外场【除操作间以外，包含园子、吧台】：只要看到有过(保鲜/质)期物品，打0分；<br>②水吧【操作间】：有过(保鲜/质)期产品，且进行售卖/使用，打0分；有过(保鲜/质)期产品，未售卖/使用，不打0分。</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">团队氛围方法论总结</td><td class="c-detail">团队定义：门店的伙伴、骑手、环卫工人、家族的伙伴<br>氛围：希望伙伴持续展现有活力，精神饱满的个人状态【反面展现-懒散，无精打采】，团队呈现分工协作，互帮互助的工作氛围。<br>①有活力，精神饱满：通过面部表情，肢体动作，语言表达，用常识感受门店的氛围状况；<br>②分工协作，互帮互助：为了让顾客进店到离店过程中有更好的体验。<br>没有口播不等于没有氛围，有口播也不等于氛围好。</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">顾客进店到离店方法论总结</td><td class="c-detail">定义：关注顾客（来者都是客，不管消不消费）从进店到离店的全过程，热情招呼，真诚帮顾客解决需求，同时关注并安抚顾客情绪。<br>①关注到顾客，第一时间招呼，关注方式可以是迎客送客、话术（两句话术）、举手示意等。<br>②通过观察和沟通发现顾客需求，并主动热情解决，有急顾客之所急的心态和行动（在守住底线的前提下，满足顾客的需求）。<br>③员工努力大于顾客满意。<br>惊喜服务：发现顾客隐性需求，创造惊喜。</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">闲时要性方法论总结</td><td class="c-detail">①闲时要性的评估首先第一步需要评估伙伴是否具备走出来的能力，就是判断【闲时】，第二步才是判断【要性】在外场的展现究竟如何<br>②如门店已安排了低峰时段的事项，在评估人充分了解和评估后当前业务情况后，可以纳为不评估【闲时要性】<br>③不存在内场的闲时要性为B，进行闲时要性评估时需要对齐当下门店是否有机会<br>有能力能够走出来，如果不能则不进行评估；如果可以出来不出来则为C，如果出来了展现不好，为了做而做，那么出来了也是C，如果出来了主动积极热情真诚就是A</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">ABC稽核团队内部和外部的成员组成</td><td class="c-detail">内部：集团训练部成员；集团训练部-训练稽核组成员；集团人力资源部-HRBP中心成员<br>外部：集团神秘顾客（集团走店群成员）；外部顾客（客赞客诉）</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">ABC得分等于</td><td class="c-detail">内部稽核得分+客赞分*客赞次数+客诉分*客诉次数+基本面认同分</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">ABC薪资提成系数划线和得分分别是</td><td class="c-detail">①优秀线；合格线<br>②78.33分；69分</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">ABC规则多久调整一次</td><td class="c-detail">半年更新一次</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-block" rowspan="6">​打的对 (40分)​</td><td class="c-content">填写|计算</td><td class="c-detail">《ABC4.0柔性标准评估表》填写是否正确|分数计算是否正确</td><td class="c-score">6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">案例与评级匹配</td><td class="c-detail">评估门店的实际案例与给予的评级是否一致（如：案例为B，评级为A为不一致）</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">问卷星填写</td><td class="c-detail">1、是否清楚怎么填写问卷星<br>2、问卷星填写是否准确无误</td><td class="c-score">6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">内容完整：要素齐全</td><td class="c-detail">明确时间、地点、人物及场景（如：进店时间、门店人力、顾客需求等）</td><td class="c-score">6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">逻辑清晰：因果分明</td><td class="c-detail">按照维度分层描述：分点阐述 “门店基本面”“团队氛围”“顾客进店到离店” 等模块，避免混杂。</td><td class="c-score">6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">细节具体：避免笼统</td><td class="c-detail">避免主观臆断：用事实描述代替主观评价（如 “伙伴未抬头招呼” 而非 “态度恶劣”）</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-block" rowspan="5">讲的清 <br>(40分)​​</td><td class="c-content">自我介绍</td><td class="c-detail">① 自我介绍：是谁？来干什么的<br>② 找准对象：当班次门店最高职级<br>③ 找准时机：离峰期</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">描述场景</td><td class="c-detail">① 运营状况：几点到店？评级时间段？顾客分布情况？伙伴人力分布情况<br>② 重点场景：哪个区域发生了什么与评级相关的故事？（讲重点，不讲评级无关场景）<br>③ 还原事实：伙伴的情况（在做什么？表情语气动作）、顾客的情况（需求、表情、感受）</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">伙伴自评</td><td class="c-detail">① 伙伴自评：确保伙伴清晰描述的场景，并基于当下的场景故事分维度进行自评<br>② 理由阐述：伙伴阐述自评结果的评级理由？评A的闪光点，评B/C的机会点<br>③ 引发思考：引导伙伴表达对每个维度的理解---是什么？为什么？怎么做</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">共识结果</td><td class="c-detail">① 公布结果：*维度，评级*<br>② 结果剖析：评A、A+的闪光点，评B/C/C-的机会点   <br>③ 达成共识：沟通当下维度评估结果存在异议的地方，达成共识</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-content">总结复盘</td><td class="c-detail">① 答疑解惑：总结整体评估结果，询问伙伴是否有其他疑惑                                                <br>② 要点总结：引导伙伴总结评估的机会点及改善建议，确保吸收到位，能正确的向上向下传达评估结果、机会点和改善建议<br>③ 心态建设：鼓励伙伴始终保持积极向上的心态，继续加油/保持</td><td class="c-score">8|6|4|2|0</td><td class="c-get"></td></tr><tr><td class="c-block" rowspan="5">综合</td><td class="c-content">​总分|得分​</td><td class="c-detail"></td><td class="c-score">总分：100分</td><td class="c-get">得分：_____________</td></tr><tr><td class="c-content">检定总结：</td><td class="c-detail">闪光点：<br><br><br>机会点：</td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">​检定官确认签字</td><td class="c-detail"></td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content">被检定伙伴确认签字</td><td class="c-detail"></td><td class="c-score"></td><td class="c-get"></td></tr><tr><td class="c-content"></td><td class="c-detail"></td><td class="c-score"></td><td class="c-get"></td></tr></tbody></table></div>
+        </div>
+    </div>
+  </div>
+<div class="tip">💡 点击任意表格直接打开 PDF 预览（右上角可下载）；文件均为原版，内容未做任何调整。</div>
+</div>
+</body>
+</html>
