@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湖北外招店长 3 个月带训规划</title>
+<style>
+  :root {
+    --tea-green: #5B8C5A;
+    --tea-light: #A3C4A3;
+    --tea-cream: #F5F0E8;
+    --tea-dark: #2D4A2C;
+    --tea-accent: #8B6914;
+    --tea-warm: #D4A853;
+    --text-primary: #2C2C2C;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #E0D8CC;
+    --bg-white: #FFFDF9;
+    --bg-section: #F9F6F0;
+    --red: #C0392B;
+    --red-light: #FDEAEA;
+    --blue: #2E6B8A;
+    --blue-light: #E8F3F8;
+    --orange: #D4770A;
+    --orange-light: #FFF5E6;
+    --purple: #6B4E8A;
+    --purple-light: #F3EEF8;
+    --green-light: #EDF5EC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: #F0ECE4;
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+  .cover {
+    background: linear-gradient(160deg, #2D4A2C 0%, #3D6B3B 40%, #5B8C5A 100%);
+    color: #fff;
+    padding: 100px 80px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before, .cover::after { content:''; position:absolute; border:2px solid rgba(255,255,255,0.1); border-radius:50%; }
+  .cover::before { top:-80px; right:-60px; width:300px; height:300px; }
+  .cover::after { bottom:-40px; left:-40px; width:200px; height:200px; border-color: rgba(255,255,255,0.08); }
+  .cover .tag { display:inline-block; background:rgba(255,255,255,0.15); padding:6px 24px; border-radius:20px; font-size:13px; letter-spacing:3px; margin-bottom:30px; }
+  .cover h1 { font-size:42px; font-weight:700; letter-spacing:2px; margin-bottom:16px; }
+  .cover .subtitle { font-size:18px; opacity:0.8; font-weight:300; }
+  .cover .meta { margin-top:30px; font-size:14px; opacity:0.7; }
+  .content { padding: 60px 80px; }
+  h2 { font-size:26px; color:var(--tea-dark); margin:50px 0 20px; padding-bottom:12px; border-bottom:2px solid var(--tea-green); display:flex; align-items:center; gap:10px; }
+  h2:first-of-type { margin-top:0; }
+  h2 .num { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:var(--tea-green); color:#fff; border-radius:50%; font-size:16px; flex-shrink:0; }
+  h3 { font-size:19px; color:var(--tea-dark); margin:30px 0 12px; padding-left:14px; border-left:3px solid var(--tea-green); }
+  h4 { font-size:16px; color:var(--text-primary); margin:18px 0 8px; }
+  p { margin:10px 0; color:var(--text-secondary); }
+  .overview-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin:24px 0; }
+  .overview-card { background:var(--bg-section); border-radius:12px; padding:24px 20px; text-align:center; }
+  .overview-card .icon { font-size:32px; margin-bottom:8px; }
+  .overview-card .label { font-size:13px; color:var(--text-muted); margin-bottom:4px; }
+  .overview-card .value { font-size:22px; font-weight:700; color:var(--tea-dark); }
+  .phase-card { background:var(--bg-section); border-radius:12px; padding:30px; margin:20px 0; border-left:5px solid var(--tea-green); position:relative; }
+  .phase-card.phase-1 { border-left-color:var(--blue); }
+  .phase-card.phase-2 { border-left-color:var(--tea-green); }
+  .phase-card.phase-3 { border-left-color:var(--orange); }
+  .phase-card .phase-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; }
+  .phase-card .phase-title { font-size:20px; font-weight:700; color:var(--tea-dark); }
+  .phase-card .phase-meta { text-align:right; font-size:13px; color:var(--text-muted); }
+  .phase-card .phase-meta strong { display:block; font-size:18px; color:var(--tea-green); }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+  thead th { background:var(--tea-dark); color:#fff; padding:12px 14px; text-align:left; font-weight:600; font-size:13px; }
+  thead th:first-child { border-radius:8px 0 0 0; }
+  thead th:last-child { border-radius:0 8px 0 0; }
+  tbody td { padding:12px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+  tbody tr:hover { background:var(--green-light); }
+  tbody tr:last-child td:first-child { border-radius:0 0 0 8px; }
+  tbody tr:last-child td:last-child { border-radius:0 0 8px 0; }
+  .badge { display:inline-block; padding:3px 10px; border-radius:12px; font-size:12px; font-weight:600; margin:2px 4px 2px 0; }
+  .badge-red { background:var(--red-light); color:var(--red); }
+  .badge-green { background:var(--green-light); color:var(--tea-dark); }
+  .badge-blue { background:var(--blue-light); color:var(--blue); }
+  .badge-orange { background:var(--orange-light); color:var(--orange); }
+  .badge-purple { background:var(--purple-light); color:var(--purple); }
+  .matrix-table td { text-align:center; font-size:13px; }
+  .matrix-table td:first-child { text-align:left; font-weight:600; }
+  .matrix-table .lead { color:var(--tea-dark); font-weight:700; }
+  .matrix-table .support { color:var(--text-muted); }
+  .timeline { position:relative; padding:20px 0; }
+  .timeline::before { content:''; position:absolute; left:40px; top:0; bottom:0; width:2px; background:var(--border); }
+  .timeline-item { display:flex; gap:20px; margin-bottom:24px; position:relative; }
+  .timeline-week { width:80px; flex-shrink:0; text-align:center; position:relative; }
+  .timeline-week .dot { width:16px; height:16px; border-radius:50%; background:var(--tea-green); margin:0 auto 8px; position:relative; z-index:1; }
+  .timeline-week .dot.blue { background:var(--blue); }
+  .timeline-week .dot.orange { background:var(--orange); }
+  .timeline-week .dot.purple { background:var(--purple); }
+  .timeline-week .wk { font-size:12px; color:var(--text-muted); }
+  .timeline-week .wk strong { display:block; font-size:16px; color:var(--tea-dark); }
+  .timeline-content { flex:1; background:var(--bg-section); border-radius:10px; padding:16px 20px; }
+  .timeline-content h4 { margin:0 0 6px; color:var(--tea-dark); }
+  .timeline-content .dept-tags { margin-top:8px; }
+  .exam-card { background:var(--bg-white); border:2px solid var(--border); border-radius:12px; padding:24px; margin:16px 0; }
+  .exam-card .exam-level { font-size:28px; font-weight:800; color:var(--tea-green); margin-bottom:4px; }
+  .exam-card .exam-name { font-size:18px; font-weight:700; color:var(--tea-dark); margin-bottom:12px; }
+  .redline-box { background:var(--red-light); border:2px dashed var(--red); border-radius:12px; padding:24px; margin:20px 0; }
+  .redline-box h4 { color:var(--red); margin:0 0 12px; }
+  .footer-bar { background:var(--tea-dark); color:rgba(255,255,255,0.6); text-align:center; padding:14px; font-size:12px; }
+  .highlight { background:linear-gradient(180deg, transparent 60%, var(--tea-light) 60%); padding:2px 4px; }
+  .note-box { background:var(--blue-light); border-radius:8px; padding:16px 20px; margin:16px 0; font-size:14px; color:var(--blue); }
+  .role-box { background:var(--bg-white); border:1px solid var(--border); border-radius:8px; padding:14px 18px; margin:8px 0; font-size:13px; }
+  .role-box strong { color:var(--tea-dark); }
+  @media print {
+    body { background:#fff; }
+    .container { box-shadow:none; max-width:100%; }
+    .cover { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .content { padding:40px 50px; }
+    .phase-card, .exam-card, .timeline-content { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="cover">
+    <div class="tag">茶颜悦色 · 湖北市场 · 城市训练部</div>
+    <h1>湖北 外招店长 带训规划</h1>
+    <p class="subtitle">3 个月 · 三阶段 · 理论+实操+认证 · 城市训练-大店长-区经理三级协同</p>
+    <div class="meta">2026 年 7 月 23 日 版</div>
+  </div>
+
+  <div class="content">
+
+    <h2><span class="num">1</span> 规划总览</h2>
+
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="icon">🗓️</div>
+        <div class="label">总周期</div>
+        <div class="value">3 个月</div>
+      </div>
+      <div class="overview-card">
+        <div class="icon">📶</div>
+        <div class="label">阶段划分</div>
+        <div class="value">3 个阶段</div>
+      </div>
+      <div class="overview-card">
+        <div class="icon">✅</div>
+        <div class="label">认证考核</div>
+        <div class="value">多场考核</div>
+      </div>
+    </div>
+
+    <p><strong>适用对象：</strong>外招店长</p>
+    <p><strong>核心目标：</strong>3 个月内完成<strong>门店业务基础 → 技能业务同频 → 店长工作接力</strong>三段递进，达成"独立带店"基本能力，转正后由大店长/区经理安排独立带店。</p>
+    <p><strong>带训店长时间投入：</strong>第二阶段起每天至少 1 小时，第三阶段投入 2-4 小时/天做深度辅导。</p>
+
+    <h3>湖北市场带训角色示例</h3>
+<div class="role-box"><strong>城市训练（湖北）：</strong>对人员学习质量负责</div>
+<div class="role-box"><strong>HRBP（湖北）：</strong>企业闻话宣导、对人员状态把关、阶段状态拜访跟进、ABC 沟通辅导</div>
+<div class="role-box"><strong>大店长：</strong>所属区域门店的带训跟进、值班/带训实操考核、不通知拜访、独立带店放手机制</div>
+<div class="role-box"><strong>区经理：</strong>每月两次门店拜访，了解学习进度&卡点、门店辅导是否偏差</div>
+    <div class="role-box"><strong>带训师傅/店长：</strong>门店带训阶段责任人；负责岗位带训、值班三步曲带教、徒弟宝典填写、阶段性观察反馈</div>
+    <div class="role-box"><strong>运营负责人：</strong>5-6 周联动大店长/区经理到店交流，第 9-12 周组织不通知拜访与独立带店认证</div>
+
+    <div class="note-box">
+      <strong>设计原则：</strong>训战结合——理论（青苗/枝干培训）与门店实操（带训师傅）穿插推进。<strong>3 个月为独立带店起点线</strong>，独立带店后的"优秀店长"成长在大店长/区经理的持续跟踪中完成。
+    </div>
+
+    <h2><span class="num">2</span> 三阶段详解</h2>
+
+    <div class="phase-card phase-1">
+      <div class="phase-header">
+        <div>
+          <span class="badge badge-blue">第一阶段</span>
+          <div class="phase-title">门店业务基础 —— "看见门店的一天"</div>
+        </div>
+        <div class="phase-meta">
+          周期 <strong>入职第一个月</strong>
+          责任人 <strong>带训师傅+大店长</strong>
+        </div>
+      </div>
+
+      <h4>阶段定向</h4>
+      <p>学习并掌握常规门店岗位操作，接触学习外卖业务和零售业务，培养对茶颜三大基础业务内容和门店伙伴日常工作的体感。</p>
+
+      <h4>学习内容</h4>
+      <table>
+        <thead>
+          <tr><th style="width:30%">模块</th><th style="width:30%">具体内容</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>基石/训练中心新人培训</strong></td>
+            <td>团队塑造；新人理论课程（企业闻话、企业发展史、门市规章、泡茶表、作品介绍、柜台、基础食安、备料、作品配方、安全知识）；新人实操课程（手工泡茶、奶油枪清洗、柜台演练、泡茶机/奶昔机使用）</td>
+            <td><span class="badge badge-purple">训练部培训老师</span></td>
+          </tr>
+          <tr>
+            <td><strong>门店水吧工作站（含开早/打烊/举牌试味）</strong></td>
+            <td>点单、出杯、备料、泡茶、打料、现调、开早、打烊、举牌试味等基础操作标准掌握</td>
+            <td><span class="badge badge-green">带训师傅+门店</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>认证考核</h4>
+      <p>▶ 新人培训结业考核（课程考核+综合考核）<br>▶ 工作站检测（水吧+零售，100分制，85分合格）<br>▶ 食安红黄灯抽问</p>
+
+      <h4>补考方式</h4>
+      <p>培训可补考 1 次；工作站检测与区域沟通，<strong>入职 10 天内必须通过。</strong>补考窗口期仍未通过 → 终止带训，不予进入下一阶段。</p>
+
+      <h4>阶段产出</h4>
+      <p>▶ 新人培训届数+结业综合考分数<br>▶ 下店日期、下店门店、理论站检周期、实际过站检日期+分数<br>▶ 阶段一面谈（区域大店长+区经理+HRBP）</p>
+    </div>
+
+    <div class="phase-card phase-2">
+      <div class="phase-header">
+        <div>
+          <span class="badge badge-green">第二阶段</span>
+          <div class="phase-title">技能业务同频 —— "我能带训、我会值班"</div>
+        </div>
+        <div class="phase-meta">
+          周期 <strong>入职第二个月</strong>
+          责任人 <strong>带训师傅+大店长+训练</strong>
+        </div>
+      </div>
+
+      <h4>阶段定向</h4>
+      <p>巩固门店业务基础，学习并掌握门店基础带训和独立值班的能力，参与不同职级的常规培训同频伙伴的学习考核内容，了解茶颜运营伙伴的成长路径。</p>
+
+      <h4>学习内容</h4>
+      <table>
+        <thead>
+          <tr><th style="width:22%">模块</th><th style="width:40%">具体内容</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>青苗培训</strong></td>
+            <td>《初级训练员定向》《企业闻话-有效沟通》《基础值班》《基础带训》《食品安全》</td>
+            <td><span class="badge badge-purple">训练</span></td>
+          </tr>
+          <tr>
+            <td><strong>带训四步骤 + 六大岗位带训重点</strong></td>
+            <td>理论：掌握训练四步骤流程，熟记六大岗位带训重点；实操：会运用四步骤进行岗位带训</td>
+            <td><span class="badge badge-green">带训师傅</span></td>
+          </tr>
+          <tr>
+            <td><strong>值班三步曲</strong></td>
+            <td>值班前/中/后各环节工作事项；按标准填写值班本；应急处理；门店常规事项对接（报修、社区商场）</td>
+            <td><span class="badge badge-green">带训师傅</span></td>
+          </tr>
+          <tr>
+            <td><strong>零售业务&外卖业务</strong></td>
+            <td>周边产品介绍、价格、优惠规则、陈列标准、补货方式；外卖平台管理、外卖业务线区别</td>
+            <td><span class="badge badge-green">对应门店店长</span></td>
+          </tr>
+          <tr>
+            <td><strong>门店周盘/订货 + 人员排班</strong></td>
+            <td>门店周盘流程与订货实操；门店人员排班实操（按客流量/伙伴能力匹配）</td>
+            <td><span class="badge badge-orange">大店长</span></td>
+          </tr>
+          <tr>
+            <td><strong>客诉&公关处理</strong></td>
+            <td>客诉分级处理流程；公关应对话术；与总部对接的标准动作</td>
+            <td><span class="badge badge-orange">大店长+HRBP</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>认证考核</h4>
+      <p>▶ 青苗结业考试（首考 1 次+补考 6 次）<br>▶ 带训实操考核（实操岗位带训考核表，100分/80分合格）<br>▶ 值班实操考核（值班管理检定表，100分/80分合格）<br>▶ 工作站检测完成 ABC&QC 同频打勾<br>▶ 食安实操考核<br>▶ 订货盘点实操考核</p>
+
+      <h4>阶段产出</h4>
+      <p>▶ 参加青苗届数+结业分数<br>▶ 带训实操考核分数+考核人签字；值班实操考核分数+考核人签字<br>▶ 食安实操考核&订货盘点实操考核通过<br>▶ 零售业务/外卖业务学习门店+带训店长签字<br>▶ 门店周盘/订货+人员排班实操记录（带训师傅签字）<br>▶ 客诉&公关处理案例记录（至少1例，含处理思路与结果）<br>▶ 阶段二面谈（区经理+大店长+HRBP）</p>
+    </div>
+
+    <div class="phase-card phase-3">
+      <div class="phase-header">
+        <div>
+          <span class="badge badge-orange">第三阶段</span>
+          <div class="phase-title">店长工作接力 —— "我开始接力带店"</div>
+        </div>
+        <div class="phase-meta">
+          周期 <strong>入职第三个月</strong>
+          责任人 <strong>大店长+区经理+运营</strong>
+        </div>
+      </div>
+
+      <h4>阶段定向</h4>
+      <p>跟班学习并掌握店长日常工作内容，开始接力带店。从"做事"过渡到"管事"。</p>
+
+      <h4>学习内容</h4>
+      <table>
+        <thead>
+          <tr><th style="width:24%">模块</th><th style="width:38%">具体内容</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>枝干培训</strong></td>
+            <td>《店长定向》《企业闻话&人才盘点&ABC》《进阶值班》《食品安全-风险管理》《订存货管理》《利润管控》《线性排班》</td>
+            <td><span class="badge badge-purple">训练</span></td>
+          </tr>
+          <tr>
+            <td><strong>茶颜土话</strong></td>
+            <td>理解茶颜行、茶颜范；学习用茶颜土话沟通和撰写案例；能够理解并正确使用茶颜土话</td>
+            <td><span class="badge badge-blue">HRBP</span></td>
+          </tr>
+          <tr>
+            <td><strong>顾客满意度管理</strong></td>
+            <td>QC 自查与纠偏；ABC 评级管理</td>
+            <td><span class="badge badge-orange">大店长+带训师傅</span></td>
+          </tr>
+          <tr>
+            <td><strong>门店管理实操</strong></td>
+            <td>门店巷战落地（重点）、门店伙伴工作站检测、行政文书</td>
+            <td><span class="badge badge-orange">大店长+带训师傅</span></td>
+          </tr>
+          <tr>
+            <td><strong>利润管控与人才盘点</strong></td>
+            <td>门店利润数据指标管理；门店人员配置、伙伴职能情况</td>
+            <td><span class="badge badge-orange">大店长+训练</span></td>
+          </tr>
+          <tr>
+            <td><strong>人员辅导</strong></td>
+            <td>新人站检、青苗辅导、实操考核辅导、枝干辅导、门店铁三角辅导</td>
+            <td><span class="badge badge-orange">大店长+带训师傅</span></td>
+          </tr>
+          <tr>
+            <td><strong>独立带店接力</strong></td>
+            <td>大店长放手管理（只协助），由伙伴进行独立管理认证；运营负责人+训练进行不通知拜访；区经理每月两次门店拜访，了解学习进度&卡点、门店辅导是否偏差</td>
+            <td><span class="badge badge-orange">运营+大店长+区经理</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>认证考核</h4>
+      <p>▶ 枝干结业考试（首考 1 次+补考 6 次）<br>▶ 转正报告（试用期工作总结报告/店长胜任力评估）<br>▶ 不通知拜访飞行检查<br>▶ 阶段三面谈（区经理+大店长+HRBP）</p>
+
+      <h4>阶段产出</h4>
+      <p>▶ 参加枝干届数+结业分数<br>▶ 茶颜土话学习（茶颜行/茶颜范实践案例）<br>▶ 转正报告（试用期工作总结报告）<br>▶ 是否通过试用期判定 + 转正日期 + 带店门店</p>
+    </div>
+
+    <h2><span class="num">3</span> 各角色职责矩阵</h2>
+
+    <p>一目了然地看每个角色在每个阶段的责任分配。● 主导 &nbsp; ○ 配合 &nbsp; — 不参与</p>
+
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="width:18%">角色</th>
+          <th style="width:16%">第一阶段<br>门店业务基础</th>
+          <th style="width:16%">第二阶段<br>技能业务同频</th>
+          <th style="width:16%">第三阶段<br>店长工作接力</th>
+          <th style="width:18%">核心职责</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>城市训练（湖北）</td>
+          <td><span class="lead">●</span></td>
+          <td><span class="lead">●</span></td>
+          <td><span class="lead">●</span></td>
+          <td style="text-align:left; font-size:12px;">学习质量总责：训练课程安排、阶段考核组织、学习档案、对人员学习质量负责</td>
+        </tr>
+        <tr>
+          <td>带训师傅/带训店长</td>
+          <td><span class="lead">●</span></td>
+          <td><span class="lead">●</span></td>
+          <td><span class="support">○</span></td>
+          <td style="text-align:left; font-size:12px;">技能教练：岗位带训、徒弟宝典填写、值班三步曲带教、阶段性观察反馈</td>
+        </tr>
+        <tr>
+          <td>区域大店长</td>
+          <td><span class="support">○</span></td>
+          <td><span class="lead">●</span></td>
+          <td><span class="lead">●</span></td>
+          <td style="text-align:left; font-size:12px;">带训跟进：公司信息同频、紧急事项报备、带训/值班实操考核、不通知拜访、独立带店放手机制</td>
+        </tr>
+        <tr>
+          <td>区经理</td>
+          <td><span class="support">—</span></td>
+          <td><span class="support">○</span></td>
+          <td><span class="lead">●</span></td>
+          <td style="text-align:left; font-size:12px;">业务督导：每月至少两次到店、不通知拜访、组织独立带店过程偏差识别</td>
+        </tr>
+        <tr>
+          <td>HRBP（湖北）</td>
+          <td><span class="lead">●</span></td>
+          <td><span class="support">○</span></td>
+          <td><span class="support">○</span></td>
+          <td style="text-align:left; font-size:12px;">制度保障：企业闻话宣导、对人员状态把关、阶段状态拜访跟进、ABC 沟通辅导</td>
+        </tr>
+        <tr>
+          <td>运营负责人</td>
+          <td><span class="support">—</span></td>
+          <td><span class="support">○</span></td>
+          <td><span class="lead">●</span></td>
+          <td style="text-align:left; font-size:12px;">业务总责：5-6 周联动到店交流、第 9-12 周组织不通知拜访+独立带店认证</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2><span class="num">4</span> 3 个月时间轴（按周）</h2>
+
+    <p>以下为学员和各角色"一张图"行动指引。每个周节点标注学习主题、责任人、关键交付。</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot blue"></div>
+          <div class="wk"><strong>第 1 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>基石/训练中心新人培训（3 天）</h4>
+          <p>团队塑造、新人理论课+实操课（企业发展史、门市规章、泡茶表、作品介绍、柜台、基础食安、备料、配方、安全、手工泡茶、奶油枪清洗、柜台演练、泡茶机/奶昔机使用）。</p>
+          <div class="dept-tags">
+            <span class="badge badge-purple">训练部培训老师</span>
+          </div>
+          <p style="margin-top:6px; font-size:13px; color:var(--text-muted);">📌 阶段交付：新人培训结业综合考分数；培训届数</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot blue"></div>
+          <div class="wk"><strong>第 2-3 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>门店带训 · 水吧工作站（7 天）</h4>
+          <p>带训师傅按徒弟宝典带训点单/泡茶/备料/出杯/现调/打料等岗位；HRBP 关注适应度。</p>
+          <div class="dept-tags">
+            <span class="badge badge-green">带训师傅</span>
+            <span class="badge badge-blue">HRBP</span>
+            <span class="badge badge-purple">训练（追踪）</span>
+          </div>
+          <p style="margin-top:6px; font-size:13px; color:var(--text-muted);">📌 阶段交付：工作站检测（85分合格）·食安红黄灯抽问通过</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot blue"></div>
+          <div class="wk"><strong>第 4 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>阶段一面谈 + 复盘</h4>
+          <p>区域大店长+区经理+HRBP+学员四方面谈：复盘新人培训+15-25天门店带训；了解困难/认同/建议；规划下阶段。</p>
+          <div class="dept-tags">
+            <span class="badge badge-orange">大店长</span>
+            <span class="badge badge-orange">区经理</span>
+            <span class="badge badge-blue">HRBP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot"></div>
+          <div class="wk"><strong>第 5 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>青苗培训（3 天）</h4>
+          <p>《初级训练员定向》《基础值班》《基础带训》《食品安全》——大店长+HRBP 关注一个月的状况做访谈交流。</p>
+          <div class="dept-tags">
+            <span class="badge badge-purple">训练</span>
+            <span class="badge badge-orange">大店长</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot"></div>
+          <div class="wk"><strong>第 6 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>青苗鉴定 + 带训/值班/食安/盘点订货实操考核</h4>
+          <p>大店长青苗鉴定；带训师傅带训下的"带训四步骤"实操考核（100分/80分合格）；值班三步曲实操考核（100分/80分合格）；食安实操考核；订货盘点实操考核。</p>
+          <div class="dept-tags">
+            <span class="badge badge-orange">大店长（青苗鉴定）</span>
+            <span class="badge badge-green">带训师傅</span>
+            <span class="badge badge-purple">训练</span>
+          </div>
+          <p style="margin-top:6px; font-size:13px; color:var(--text-muted);">📌 阶段交付：带训/值班/食安/盘点订货实操考核通过</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot"></div>
+          <div class="wk"><strong>第 7-8 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>门店人员管理练习 + 茶颜土话学习</h4>
+          <p>门店人员排班、人员状态关注&拜访；茶颜土话学习（茶颜行/茶颜范实践）；大店长一周 2 次了解学习并解答疑惑；协助评估独立练习质量。</p>
+          <div class="dept-tags">
+            <span class="badge badge-blue">HRBP（土话）</span>
+            <span class="badge badge-orange">大店长</span>
+          </div>
+          <p style="margin-top:6px; font-size:13px; color:var(--text-muted);">📌 阶段交付：独立排定门店周班表</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot orange"></div>
+          <div class="wk"><strong>第 9 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>枝干培训（合并）+ 门店管理实操启动</h4>
+          <p>《店长定向》《企业闻话&人才盘点&ABC》《进阶值班》《食品安全-风险管理》《订存货管理》《利润管控》《线性排班》；门店 QC 自查-大店长；门店周盘/订货；门店人员排班。</p>
+          <div class="dept-tags">
+            <span class="badge badge-purple">训练</span>
+            <span class="badge badge-orange">大店长</span>
+            <span class="badge badge-green">带训师傅</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot orange"></div>
+          <div class="wk"><strong>第 10 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>门店巷战落地 + ABC 评级学习</h4>
+          <p>门店巷战学习（重点）；ABC 评级学习-大店长；门店人员青苗枝干辅导-训练。</p>
+          <div class="dept-tags">
+            <span class="badge badge-orange">大店长</span>
+            <span class="badge badge-purple">训练</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot orange"></div>
+          <div class="wk"><strong>第 11 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>独立带店接力 + 试用期评价</h4>
+          <p>大店长放手管理（只协助），由伙伴进行独立管理认证；运营负责人+训练进行不通知拜访；区经理每月两次门店拜访，了解学习进度&卡点、门店辅导是否偏差。</p>
+          <div class="dept-tags">
+            <span class="badge badge-orange">运营负责人</span>
+            <span class="badge badge-orange">大店长</span>
+            <span class="badge badge-orange">区经理</span>
+            <span class="badge badge-purple">训练</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-week">
+          <div class="dot orange"></div>
+          <div class="wk"><strong>第 12 周</strong></div>
+        </div>
+        <div class="timeline-content">
+          <h4>转正报告 + 阶段三面谈</h4>
+          <p>试用期工作总结报告（店长胜任力评估）；阶段三面谈（区经理+大店长+HRBP）——是否通过试用期、转正日期、带店门店。</p>
+          <div class="dept-tags">
+            <span class="badge badge-orange">大店长</span>
+            <span class="badge badge-orange">区经理</span>
+            <span class="badge badge-blue">HRBP</span>
+          </div>
+          <p style="margin-top:6px; font-size:13px; color:var(--text-muted);">📌 阶段交付：转正报告 · 试用期综合评价 · 带店门店分配</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2><span class="num">5</span> 红线与一票否决</h2>
+
+    <div class="redline-box">
+      <h4>⚠️ 以下任一情形触发一票否决，带训终止，不予转正：</h4>
+      <ol style="margin-left: 20px; color: var(--text-secondary);">
+        <li><strong>重大诚信管理事故：</strong>违规积点、考勤作假等</li>
+        <li><strong>重大客诉处理不当：</strong>客诉升级为舆情事件或引发顾客强烈不满且处理明显失当</li>
+        <li><strong>现金管理违规：</strong>收银环节出现资金差异且无法合理解释，或存在恶意违规行为</li>
+        <li><strong>团队管理严重失当：</strong>与伙伴发生激烈冲突、不当言行引发团队集体投诉、或存在职场霸凌行为</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">6</span> 配套工具与交付物清单</h2>
+
+    <table>
+      <thead>
+        <tr><th>工具/文档</th><th>负责人</th><th>用途</th><th>节点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>新人徒弟宝典</strong></td><td>学员填、带训师傅签</td><td>新人培训期间必填，含带训计划+每个岗位带训内容</td><td>第 1-3 周</td></tr>
+        <tr><td><strong>工作站检测表（100分/85分合格）</strong></td><td>大店长（初考）</td><td>岗位操作+食安项+附加项全维度检定</td><td>第 3 周末</td></tr>
+        <tr><td><strong>实操岗位带训考核表</strong></td><td>大店长</td><td>带训四步骤带训能力考核（准备20%+呈现56%+试做12%+追踪7%+沟通5%+抽问4%）</td><td>第 6 周</td></tr>
+        <tr><td><strong>值班管理检定表</strong></td><td>大店长</td><td>值班前/中/后三步曲考核；食安红灯即 0 分</td><td>第 6 周</td></tr>
+        <tr><td><strong>食安管理鉴定表</strong></td><td>大店长</td><td>食安实操考核；现场抽问+场景演练</td><td>第 6 周</td></tr>
+        <tr><td><strong>订货盘点鉴定表</strong></td><td>大店长</td><td>订货盘点实操考核；门店周盘/订货/库存准确性全维度检定</td><td>第 6 周</td></tr>
+        <tr><td><strong>转正报告模板</strong></td><td>大店长辅导</td><td>试用期工作总结报告/店长胜任力评估</td><td>第 12 周</td></tr>
+    </tbody>
+    </table>
+
+    <h2><span class="num">7</span> 沟通与对齐机制</h2>
+
+    <table>
+      <thead>
+        <tr><th>机制</th><th>参与人</th><th>频率</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>每日带训沟通</strong></td><td>学员 + 带训师傅</td><td>每日</td><td>当天复盘 + 次日计划，徒弟宝典/带训日志填写</td></tr>
+        <tr><td><strong>大店长周追踪</strong></td><td>大店长 + 带训师傅</td><td>每周</td><td>检查徒弟宝典、岗位清单进度；第 3-4 周一周 2 次拜访</td></tr>
+        <tr><td><strong>区经理月度拜访</strong></td><td>区经理 + 学员</td><td>每月 2 次</td><td>了解学习进度&卡点；门店辅导是否偏差</td></tr>
+        <tr><td><strong>阶段面谈会</strong></td><td>大店长+区经理+HRBP+学员</td><td>每阶段末</td><td>阶段评审、面谈表签字、是否进入下一阶段决策</td></tr>
+        <tr><td><strong>5-6 周联动交流</strong></td><td>运营负责人+大店长+区经理</td><td>5-6 周</td><td>到店了解学习情况、困难，给业务视角反馈</td></tr>
+        <tr><td><strong>独立带店不通知拜访</strong></td><td>运营负责人+训练</td><td>9-12 周</td><td>了解现场管理状况、识别过程偏差</td></tr>
+      </tbody>
+    </table>
+
+    <h2><span class="num">8</span> 认证结果与转正衔接</h2>
+
+    <table>
+      <thead>
+        <tr><th>认证结果</th><th>后续动作</th><th>时间节点</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:var(--tea-green); font-weight:700;">三阶段全部通过</td>
+          <td>提交转正报告 → 阶段三面谈综合评价 → HRBP 办理转正手续 → 大店长/区经理分配带店门店</td>
+          <td>第 12 周末</td>
+        </tr>
+        <tr>
+          <td style="color:var(--orange); font-weight:700;">部分未通过（非红线项）</td>
+          <td>大店长制定补训计划，延长 2-4 周后补考；补考仍不通过则终止带训，不予转正</td>
+          <td>第 13-16 周</td>
+        </tr>
+        <tr>
+          <td style="color:var(--red); font-weight:700;">触发红线一票否决</td>
+          <td>立即终止带训，大店长+训练出具评估报告，不予转正</td>
+          <td>即时</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box" style="margin-top:30px;">
+      <strong>转正报告核心要素：</strong><br>
+      ① 三个月学习总结（岗位掌握、带训能力、值班能力、店长工作接力认知）<br>
+      ② 自我评估（优势、待提升项、改进计划）<br>
+      ③ 对带店门店的初步运营规划（30-60-90 天计划，含食安/人员/业绩/巷战维度）
+    </div>
+
+  </div>
+
+  <div class="footer-bar">
+    茶颜悦色 · 湖北市场 · 城市训练部 &nbsp;|&nbsp; 外招店长带训规划 &nbsp;|&nbsp; 2026 年 7 月 23 日 版
+  </div>
+
+</div>
+
+</body>
+</html>
